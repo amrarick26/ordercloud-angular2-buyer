@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // third party services
 import { CookieService } from 'angular2-cookie/services/cookies.service';
@@ -12,15 +13,17 @@ import { OrderCloudSDK } from './common/services/ordercloud-sdk/ordercloud-sdk.s
 
 // app components
 import { AppComponent } from './app.component';
+import { LoginFormComponent } from './login/login-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     CookieService,

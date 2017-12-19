@@ -9,6 +9,7 @@ import { OrderCloudSDK } from './common/services/ordercloud-sdk/ordercloud-sdk.s
 export class AppComponent {
   title = 'app';
   currentUser = {};
+  myAddresses = {};
   
   constructor(private OrderCloudSDK: OrderCloudSDK) {}
 
@@ -22,7 +23,16 @@ export class AppComponent {
   getMe() {
     return this.OrderCloudSDK.Me.Get()
       .subscribe( me => {
-        this.currentUser = me
+        this.currentUser = me;
+        this.getMeAddresses();
       } )
+  }
+
+  getMeAddresses() {
+    return this.OrderCloudSDK.Me.ListAddresses()
+      .subscribe( addresses => {
+        this.myAddresses = addresses;
+        console.log('addresses', addresses);
+      } );
   }
 }
