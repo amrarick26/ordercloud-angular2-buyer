@@ -17,7 +17,8 @@ import { LoginFormComponent } from './login/login-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginFormComponent
   ],
   imports: [
     NgbModule.forRoot(),

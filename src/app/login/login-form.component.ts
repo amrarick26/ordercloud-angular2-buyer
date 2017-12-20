@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { OrderCloudSDK } from '../common/services/ordercloud-sdk/ordercloud-sdk.service'; 
 
 @Component( {
@@ -8,18 +8,14 @@ import { OrderCloudSDK } from '../common/services/ordercloud-sdk/ordercloud-sdk.
 } )
 
 export class LoginFormComponent implements OnInit {
-    constructor(private OrderCloudSDK: OrderCloudSDK) {}
+    constructor(private formBuilder: FormBuilder) {}
 
-    loginForm: FormControl;
-    // username: FormControl;
-    // password: FormControl;
+    loginForm: FormGroup;
 
     ngOnInit() {
-        this.loginForm = new FormControl('login');
-
-        // this.loginForm = new FormGroup({
-        //     username: new FormControl(),
-        //     password: new FormControl()
-        // })
+        this.loginForm = this.formBuilder.group( {
+            username: '',
+            password: ''
+        } );
     }
 }
