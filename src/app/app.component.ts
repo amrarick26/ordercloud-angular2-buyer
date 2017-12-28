@@ -13,13 +13,6 @@ export class AppComponent {
   
   constructor(private OrderCloudSDK: OrderCloudSDK) {}
 
-  login() {
-    return this.OrderCloudSDK.Auth.Login('', '', 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' , '')
-      .subscribe( res => {
-        this.OrderCloudSDK.SetToken( res.access_token )
-      } );
-  }
-
   getMe() {
     return this.OrderCloudSDK.Me.Get()
       .subscribe( me => {

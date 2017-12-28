@@ -102,8 +102,3 @@ export interface OcMeAddressList {
     Meta: OcListMeta,
     Items: OcMeAddress [];
 }
-
-export interface Login {
-    Username: string,
-    Password: string
-}
