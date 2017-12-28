@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 
 // app config
 import { APP_CONFIG, OcAppConfig } from './app.config';
+import { ForgotPasswordFormComponent } from './login/forgot-password-form/forgot-password-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { APP_CONFIG, OcAppConfig } from './app.config';
     LoginFormComponent,
     ResetPasswordFormComponent,
     HomeComponent,
+    ForgotPasswordFormComponent,
   ],
   imports: [
     BrowserModule,
