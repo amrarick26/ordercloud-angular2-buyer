@@ -3,18 +3,28 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { OcAuthResponse, OcMeCategoryList, OcMeProduct, OcMeProductList } from './ordercloud-sdk.model';
+import { Inject } from '@angular/core';
+import { APP_CONFIG, AppConfig } from '../../../app.config';
 import * as _ from 'lodash';
 
 @Injectable()
 export class OrderCloudSDK {
   private authurl = 'https://auth.ordercloud.io/oauth/token';
   private apiurl = 'https://api.ordercloud.io/v1';
-  private cookieName = 'angular2_token'; // TODO: we should build up a dyamic cookie name from appname
+  private cookiePrefix = this.appConfig.appname.replace(/ /g, '_').toLowerCase();
+  private cookieName = this.cookiePrefix + '_token';
 
-  constructor(private http: HttpClient, private cookieService: CookieService) { }
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+    @Inject(APP_CONFIG) private appConfig: AppConfig
+  ) { }
 
   Auth = {
-    Login: (username: string, password: string, clientID: string, scope: string[]) => {
+    Login: (username: string, password: string, clientID: string, scope: string[] | string) => {
+      if (typeof scope !== 'string') {
+        scope = scope.join(' ');
+      }
       const body = `grant_type=password&scope=${scope}&client_id=${clientID}&username=${username}&password=${password}`;
       return this.http
         .post<OcAuthResponse>(this.authurl, body, {
@@ -32,7 +42,7 @@ export class OrderCloudSDK {
       return this.callApi('get', '/me/categories', options);
     },
 
-    ListProduct: (options?: object): Observable<OcMeProductList> => {
+    ListProducts: (options?: object): Observable<OcMeProductList> => {
       return this.callApi('get', '/me/products', options);
     },
 

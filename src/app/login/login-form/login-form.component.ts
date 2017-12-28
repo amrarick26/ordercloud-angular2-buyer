@@ -1,5 +1,5 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import { OcAutoValidate } from '../../common/services/oc-auto-validate/oc-auto-validate.service';
 import { Router } from '@angular/router';
 import { APP_CONFIG, AppConfig } from '../../app.config';
@@ -21,6 +21,9 @@ export class LoginFormComponent implements OnInit {
     @Inject(APP_CONFIG) private appConfig: AppConfig
   ) { }
 
+  @Output() emitSetForm = new EventEmitter();
+
+  appName: string;
   loginForm: FormGroup;
   formErrors: object;
   validationMessages: object;
@@ -51,6 +54,10 @@ export class LoginFormComponent implements OnInit {
         console.log(ex.error.error_description);
       }
       );
+  }
+
+  setForm(form: string) {
+    this.emitSetForm.emit(form);
   }
 
 }
