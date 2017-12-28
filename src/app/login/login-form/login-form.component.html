@@ -1,0 +1,42 @@
+<div class="card card-primary">
+    <form (ngSubmit)="login()"
+          [formGroup]="loginForm"
+          class="card-body"
+          name="LoginForm"
+          autocomplete="off"
+          novalidate>
+        <h3 class="card-title text-center">Login</h3>
+        <div class="form-group">
+            <label for="usernameId"
+                   class="sr-only">Username</label>
+            <input formControlName="username"
+                   id="usernameId"
+                   type="text"
+                   class="form-control"
+                   placeholder="Username"
+                   autocapitalize="off"
+                   autofocus />
+        </div>
+        <div class="form-group">
+            <label for="passwordId"
+                   class="sr-only">Password</label>
+            <input formControlName="password"
+                   type="passwordId"
+                   class="form-control"
+                   placeholder="Password"
+                   id="Password" />
+        </div>
+        <div class="form-group text-center">
+            <div class="checkbox">
+                <label for="rememberMeId">
+                    <input formControlName="rememberMe" type="checkbox" id="rememberMeId">
+                    Remember Me
+                </label>
+            </div>
+        </div>
+        <button id="submitBtn"
+                type="submit"
+                [disabled]="!loginForm.valid"
+                class="btn btn-primary btn-block">Submit</button>
+    </form>
+</div>
