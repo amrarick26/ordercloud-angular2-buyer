@@ -11,6 +11,10 @@ export class LoginComponent implements OnInit {
     private form: string;
 
     ngOnInit() {
-        this.form = 'reset-password';
+        this.setForm('login');
+    }
+
+    setForm(form) {
+        this.form = form;
     }
 }

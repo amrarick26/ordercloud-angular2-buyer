@@ -24,7 +24,17 @@ html {
 /**
  * Basic styles for links
  */
-a {
+
+
+/**
+* bootstrap really wants us to use href on an <a> tag 
+* but that causes some bugs in angular around routing 
+* as referenced here: https://github.com/angular/angular/issues/7294
+* so we're matching specificity to allow styling on just <a> tags
+**/
+a:not([href]):not([tabindex]),
+a:not([href]):not([tabindex]):focus, 
+a:not([href]):not([tabindex]):hover{
   color: $brand-color;
   text-decoration: none;
 
@@ -32,4 +42,9 @@ a {
     color: $text-color;
     text-decoration: underline;
   }
+
+  cursor: pointer; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  user-select: none
 }
