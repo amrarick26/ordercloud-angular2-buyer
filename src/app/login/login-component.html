@@ -1,0 +1,5 @@
+<div class="login-page"
+     [ngSwitch]="form">
+    <app-login-form *ngSwitchCase="'login'"></app-login-form>
+    <app-reset-password-form *ngSwitchCase="'reset-password'"></app-reset-password-form>
+</div>
