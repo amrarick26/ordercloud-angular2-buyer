@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
     constructor() { }
-    private form: string;
+    form: string;
 
     ngOnInit() {
         this.setForm('login');
