@@ -1,0 +1,13 @@
+.navbar{
+    display: flex;
+    flex-wrap: nowrap;
+    .navbar-collapse{
+        display:inline-block;
+        .navbar-nav{
+            flex-direction: inherit;
+            .nav-item{
+                padding: 15px;
+            }
+        }
+    }
+}
