@@ -5,11 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 // third party services
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { CookieModule } from 'ngx-cookie';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OrderCloudModule } from '@ordercloud/angular-sdk';
 
 // app services
-import { OrderCloudSDK } from './common/services/ordercloud-sdk/ordercloud-sdk.service';
+import { OcAutoValidate } from './common/services/oc-auto-validate/oc-auto-validate.service';
+
+// configs
+import { APP_CONFIG, OcAppConfig } from './config/app.config';
+import { OcSDKConfig } from './config/ordercloud-sdk.config';
 
 // app components
 import { AppComponent } from './app.component';
@@ -17,11 +22,7 @@ import { LoginFormComponent } from './login/login-form/login-form.component';
 import { ResetPasswordFormComponent } from './login/reset-password-form/reset-password-form.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { LoginComponent } from './login/login-component';
-import { OcAutoValidate } from './common/services/oc-auto-validate/oc-auto-validate.service';
 import { HomeComponent } from './home/home.component';
-
-// app config
-import { APP_CONFIG, OcAppConfig } from './app.config';
 import { ForgotPasswordFormComponent } from './login/forgot-password-form/forgot-password-form.component';
 
 @NgModule({
@@ -34,15 +35,20 @@ import { ForgotPasswordFormComponent } from './login/forgot-password-form/forgot
     ForgotPasswordFormComponent,
   ],
   imports: [
+    // angular modules
     BrowserModule,
     HttpClientModule,
-    NgbModule.forRoot(),
     ReactiveFormsModule,
-    AppRoutingModule
+
+    // app modules
+    AppRoutingModule,
+
+    // third party modules
+    NgbModule.forRoot(),
+    CookieModule.forRoot(),
+    OrderCloudModule.forRoot(OcSDKConfig)
   ],
   providers: [
-    CookieService,
-    OrderCloudSDK,
     OcAutoValidate,
     { provide: APP_CONFIG, useValue: OcAppConfig }
   ],

@@ -2,8 +2,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import { OcAutoValidate } from '../../common/services/oc-auto-validate/oc-auto-validate.service';
 import { Router } from '@angular/router';
-import { APP_CONFIG, AppConfig } from '../../app.config';
-import { OrderCloudSDK } from '../../common/services/ordercloud-sdk/ordercloud-sdk.service';
+import { APP_CONFIG, AppConfig } from '../../config/app.config';
+import { AuthService, TokenService } from '@ordercloud/angular-sdk';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 
 
@@ -16,7 +16,8 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private ocAutoValidate: OcAutoValidate,
-    private orderCloudSDK: OrderCloudSDK,
+    private ocAuthService: AuthService,
+    private ocTokenService: TokenService,
     private router: Router,
     @Inject(APP_CONFIG) private appConfig: AppConfig
   ) { }
@@ -40,14 +41,14 @@ export class LoginFormComponent implements OnInit {
   }
 
   login() {
-    return this.orderCloudSDK.Auth.Login(
+    return this.ocAuthService.Login(
       this.loginForm.get('username').value,
       this.loginForm.get('password').value,
       this.appConfig.clientID,
       this.appConfig.scope
     ).subscribe(
       response => {
-        this.orderCloudSDK.SetToken(response.access_token);
+        this.ocTokenService.SetAccess(response.access_token);
         this.router.navigateByUrl('/home');
       },
       (ex: HttpErrorResponse) => {
