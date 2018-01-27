@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // third party services
 import { CookieModule } from 'ngx-cookie';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrderCloudModule } from '@ordercloud/angular-sdk';
+import { ToasterModule } from 'angular2-toaster';
 
 // app services
 import { OcAutoValidate } from './common/services/oc-auto-validate/oc-auto-validate.service';
@@ -37,6 +39,7 @@ import { ForgotPasswordFormComponent } from './login/forgot-password-form/forgot
   imports: [
     // angular modules
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
 
@@ -46,7 +49,8 @@ import { ForgotPasswordFormComponent } from './login/forgot-password-form/forgot
     // third party modules
     NgbModule.forRoot(),
     CookieModule.forRoot(),
-    OrderCloudModule.forRoot(OcSDKConfig)
+    OrderCloudModule.forRoot(OcSDKConfig),
+    ToasterModule
   ],
   providers: [
     OcAutoValidate,
