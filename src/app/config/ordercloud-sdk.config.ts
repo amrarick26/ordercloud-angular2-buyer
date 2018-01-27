@@ -10,6 +10,6 @@ export function OcSDKConfig() {
     return new Configuration({
         basePath: apiurl + '/' + apiVersion,
         authPath: authUrl,
-        cookiePrefix: OcAppConfig.appname
+        cookiePrefix: OcAppConfig.appname.replace(/ /g, '_').toLowerCase()
     });
 }
