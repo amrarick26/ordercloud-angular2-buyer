@@ -15,7 +15,6 @@ import { HttpErrorResponse } from '@angular/common/http/src/response';
 export class LoginFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
-    private ocAutoValidate: OcAutoValidate,
     private ocAuthService: AuthService,
     private ocTokenService: TokenService,
     private router: Router,
@@ -26,18 +25,13 @@ export class LoginFormComponent implements OnInit {
 
   appName: string;
   loginForm: FormGroup;
-  formErrors: object;
-  validationMessages: object;
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      username: '',
+      password: '',
       rememberMe: false
     });
-
-    this.formErrors = {};
-    this.ocAutoValidate.HandleValidationMessages(this.loginForm, this.formErrors);
   }
 
   login() {
@@ -60,5 +54,4 @@ export class LoginFormComponent implements OnInit {
   setForm(form: string) {
     this.emitSetForm.emit(form);
   }
-
 }

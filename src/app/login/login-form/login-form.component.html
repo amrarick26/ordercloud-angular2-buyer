@@ -3,7 +3,6 @@
     <form (ngSubmit)="login()"
           [formGroup]="loginForm"
           class="card-body"
-          name="LoginForm"
           autocomplete="off"
           novalidate>
         <h4 class="card-title text-center">Login</h4>
@@ -42,5 +41,5 @@
     </form>
 </div>
 <div class="text-center forgotPassword">
-    <a (click)="setForm('reset-password')">Forgot Password?</a>
+    <a (click)="setForm('forgot-password')">Forgot Password?</a>
 </div>
