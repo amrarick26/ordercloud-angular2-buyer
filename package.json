@@ -26,16 +26,16 @@
         "@ordercloud/angular-sdk": "0.0.1-0",
         "@types/lodash": "^4.14.91",
         "@types/moment": "^2.13.0",
-        "angular2-toaster": "^4.0.2",
         "bootstrap": "^4.0.0-beta.2",
         "core-js": "^2.4.1",
         "jquery": "3",
         "lodash": "^4.17.4",
         "moment": "^2.20.0",
         "ngx-cookie": "^2.0.1",
+        "ngx-toastr": "^8.1.1",
         "popper.js": "1.12.9",
         "rxjs": "^5.5.2",
-        "zone.js": "^0.8.14"
+        "zone.js": "^0.8.20"
     },
     "devDependencies": {
         "@angular/cli": "^1.6.6",
