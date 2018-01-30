@@ -4,5 +4,6 @@
                     (emitSetForm)="setForm($event)"></app-login-form>
     <app-reset-password-form *ngSwitchCase="'reset-password'"
                              (emitSetForm)="setForm($event)"></app-reset-password-form>
-    <app-forgot-password-form *ngSwitchCase="'forgot-password'"></app-forgot-password-form>
+    <app-forgot-password-form *ngSwitchCase="'forgot-password'"
+                             (emitSetForm)="setForm($event)"></app-forgot-password-form>
 </div>

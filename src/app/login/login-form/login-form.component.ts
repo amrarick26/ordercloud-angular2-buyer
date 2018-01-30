@@ -1,6 +1,5 @@
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
-import { OcAutoValidate } from '../../common/services/oc-auto-validate/oc-auto-validate.service';
 import { Router } from '@angular/router';
 import { APP_CONFIG, AppConfig } from '../../config/app.config';
 import { AuthService, TokenService } from '@ordercloud/angular-sdk';
