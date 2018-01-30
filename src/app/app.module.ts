@@ -10,6 +10,8 @@ import { CookieModule } from 'ngx-cookie';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrderCloudModule } from '@ordercloud/angular-sdk';
 import { ToastrModule } from 'ngx-toastr';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 // app services
 import { OcAutoValidate } from './common/services/oc-auto-validate/oc-auto-validate.service';
@@ -53,11 +55,13 @@ import { ForgotPasswordFormComponent } from './login/forgot-password-form/forgot
     CookieModule.forRoot(),
     OrderCloudModule.forRoot(OcSDKConfig),
     ToastrModule.forRoot(),
+    NgProgressModule.forRoot(),
+    NgProgressHttpModule
   ],
   providers: [
     OcAutoValidate,
     { provide: APP_CONFIG, useValue: OcAppConfig },
-    {provide: ErrorHandler, useClass: AppErrorHandler}
+    { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
