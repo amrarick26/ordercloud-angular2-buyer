@@ -3,8 +3,6 @@ import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { APP_CONFIG, AppConfig } from '../../config/app.config';
 import { AuthService, TokenService } from '@ordercloud/angular-sdk';
-import { HttpErrorResponse } from '@angular/common/http/src/response';
-
 
 @Component({
   selector: 'app-login-form',
@@ -44,8 +42,8 @@ export class LoginFormComponent implements OnInit {
         this.ocTokenService.SetAccess(response.access_token);
         this.router.navigateByUrl('/home');
       },
-      (ex: HttpErrorResponse) => {
-        console.log(ex.error.error_description);
+      (ex) => {
+        throw ex;
       }
       );
   }

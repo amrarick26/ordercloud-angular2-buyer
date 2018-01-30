@@ -11,8 +11,10 @@ export class AppErrorHandler extends ErrorHandler {
         if (ex && ex.error && ex.error.Errors && ex.error.Errors.length) {
             const e = ex.error.Errors[0];
             message = e.ErrorCode === 'NotFound' ? e.Data.ObjectType + ' ' + e.Data.ObjectID + ' not found.' : e.Message;
-        } else if (ex && ex['error_description']) {
-            message = ex['error_description'];
+        } else if (ex && ex.error && ex.error['error_description']) {
+            message = ex.error['error_description'];
+        } else if (ex.error) {
+            message = ex.error;
         } else if (ex.message) {
             message = ex.message;
         } else {
