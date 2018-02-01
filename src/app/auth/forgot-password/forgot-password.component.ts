@@ -25,15 +25,15 @@ export class ForgotPasswordComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(
-    private formService: DynamicFormService,     
+    private formService: DynamicFormService,
     private passwordResetService: PasswordResetService,
     private router: Router,
     @Inject(APP_CONFIG) private appConfig: AppConfig) {
 
-    }
+  }
 
   ngOnInit() {
-      this.formGroup = this.formService.createFormGroup(this.formModel);
+    this.formGroup = this.formService.createFormGroup(this.formModel);
   }
 
   onSubmit() {
@@ -43,9 +43,8 @@ export class ForgotPasswordComponent implements OnInit {
     }).subscribe(
       () => {
         this.router.navigateByUrl('/reset-password');
-    }, error => {
-      throw error;
-    });
+      }, error => {
+        throw error;
+      });
   }
-
 }
