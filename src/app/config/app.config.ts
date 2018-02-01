@@ -1,7 +1,7 @@
 import { InjectionToken } from '@angular/core';
 export const APP_CONFIG = new InjectionToken<AppConfig>('app.config');
 export const OcAppConfig: AppConfig = {
-    appname: '5hopper',
+    appname: 'Shopper',
     clientID: '6C086A9F-6252-40F6-8AD4-6234A099E49F',
     scope: [
         'BuyerReader',
