@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formGroup);
     this.ocAuthService.Login(
       this.formGroup.get('username').value,
       this.formGroup.get('password').value,
