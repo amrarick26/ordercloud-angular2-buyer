@@ -3,69 +3,69 @@ import {
     DynamicCheckboxModel,
     DynamicInputModel,
     DynamicFormLayout
-} from "@ng-dynamic-forms/core";
+} from '@ng-dynamic-forms/core';
 
 export const LOGIN_MODEL: DynamicFormControlModel[] = [
 
     new DynamicInputModel({
-        id: "username",
-        label: "Username",
+        id: 'username',
+        label: 'Username',
         maxLength: 42,
-        placeholder: "Username",
+        placeholder: 'Username',
         autoFocus: true,
-        autoComplete: "off",
+        autoComplete: 'off',
         validators: {
         },
     }),
 
     new DynamicInputModel({
-        id: "password",
-        label: "Password",
-        placeholder: "Password",
-        inputType: "password",
-        autoComplete: "off",
+        id: 'password',
+        label: 'Password',
+        placeholder: 'Password',
+        inputType: 'password',
+        autoComplete: 'off',
         validators: {
         },
     }),
 
     new DynamicCheckboxModel({
-        id: "rememberMe",
-        label: "Remember Me",
+        id: 'rememberMe',
+        label: 'Remember Me',
     }),
 
     new DynamicInputModel({
-        id: "submit",
+        id: 'submit',
         label: null,
         inputType: 'submit',
-        value: "Submit",
+        value: 'Submit',
     }),
 ];
 
-export const LOGIN_LAYOUT : DynamicFormLayout = {
-    
-    "username": {
+export const LOGIN_LAYOUT: DynamicFormLayout = {
+
+    'username': {
         element: {
-            label: "sr-only"
-        }
-    },
-    
-    "password": {
-        element: {
-            label: "sr-only"
+            label: 'sr-only'
         }
     },
 
-    "rememberMe": {
+    'password': {
         element: {
-            container: "custom-checkbox",
-            control: "custom-control-input",
-            label: "custom-control-label"
+            label: 'sr-only'
         }
     },
 
-    "submit": {
+    'rememberMe': {
         element: {
-            control: "btn btn-primary"
+            container: 'custom-checkbox',
+            control: 'custom-control-input',
+            label: 'custom-control-label'
+        }
+    },
+
+    'submit': {
+        element: {
+            control: 'btn btn-primary'
         }
     }
 };
