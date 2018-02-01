@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 
 // app modules
 import { AuthModule } from './auth/auth.module';
+import { LayoutModule } from './layout/layout.module';
 
 // app components
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     NgProgressHttpModule,
     SharedModule,
     AppRoutingModule,
-    AuthModule,
+    LayoutModule,
+    AuthModule
   ],
   providers: [
   ],
