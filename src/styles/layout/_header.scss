@@ -2,6 +2,7 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-main {
-    margin-top:$nav-link-height * 1.5;
+
+.jumbotron {
+    padding-top:$jumbotron-padding +($nav-link-height * 2.75);
 }
