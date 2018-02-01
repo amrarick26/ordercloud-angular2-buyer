@@ -35,16 +35,16 @@ html {
 a:not([href]):not([tabindex]),
 a:not([href]):not([tabindex]):focus, 
 a:not([href]):not([tabindex]):hover{
-  color: $brand-color;
+  color: $link-color;
   text-decoration: none;
 
   @include on-event {
-    color: $text-color;
+    color: $body-color;
     text-decoration: underline;
   }
 
   cursor: pointer; 
   -webkit-user-select: none; 
   -moz-user-select: none; 
-  user-select: none
+  user-select: none;
 }
