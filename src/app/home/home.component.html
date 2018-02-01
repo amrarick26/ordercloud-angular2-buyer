@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">{{appConfig.appname}}</a>
+    <div class="navbar-brand">{{appConfig.appname}}</div>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLink="/home">
+      <li class="nav-item active" routerLink="/home">
         <a class="nav-link">Home</a>
       </li>
       <li class="nav-item">
@@ -25,7 +25,7 @@
     </ul>
   </div>
 </nav>
-<div class="jumbotron">
+<div class="jumbotron bg-light">
   <div class="container">
     <h1 class="display-4">Hello, {{appConfig.appname}}!</h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
