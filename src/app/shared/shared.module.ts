@@ -25,45 +25,45 @@ import { AppErrorHandler } from '../config/error-handling.config';
 
 @NgModule({
   imports: [
-    //angular
+    // angular
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
 
-    //3rd party utils
+    // 3rd party utils
     CookieModule.forRoot(),
     ToastrModule.forRoot(),
-    
-    //3rd party UI
+
+    // 3rd party UI
     TextMaskModule,
     NgbModule.forRoot(),
     DynamicFormsCoreModule.forRoot(),
     DynamicFormsNGBootstrapUIModule,
 
-    //OrderCloud
+    // OrderCloud
     OrderCloudModule.forRoot(OcSDKConfig),
   ],
   exports: [
-    //angular
+    // angular
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    
-    //3rd party utils
+
+    // 3rd party utils
     CookieModule,
     ToastrModule,
 
-    //3rd party UI
+    // 3rd party UI
     TextMaskModule,
     NgbModule,
     DynamicFormsCoreModule,
     DynamicFormsNGBootstrapUIModule,
 
-    //OrderCloud
+    // OrderCloud
     OrderCloudModule,
   ],
   providers: [

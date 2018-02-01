@@ -23,18 +23,18 @@ export class LoginComponent implements OnInit {
   formModel: DynamicFormControlModel[] = LOGIN_MODEL;
   formLayout: DynamicFormLayout = LOGIN_LAYOUT;
   formGroup: FormGroup;
-  
+
   constructor(
-    private formService: DynamicFormService,     
+    private formService: DynamicFormService,
     private ocAuthService: AuthService,
     private ocTokenService: TokenService,
     private router: Router,
     @Inject(APP_CONFIG) private appConfig: AppConfig) {
 
-    }
+  }
 
   ngOnInit() {
-      this.formGroup = this.formService.createFormGroup(this.formModel);
+    this.formGroup = this.formService.createFormGroup(this.formModel);
   }
 
   onSubmit() {
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       this.appConfig.scope
     ).subscribe(
       response => {
-        //TODO: check this.formGroup.get('rememberMe').value to see if we should store a refresh token
+        // TODO: check this.formGroup.get('rememberMe').value to see if we should store a refresh token
         this.ocTokenService.SetAccess(response.access_token);
         this.router.navigateByUrl('/home');
       },

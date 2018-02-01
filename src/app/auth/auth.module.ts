@@ -17,9 +17,9 @@ import { AuthRoutingModule } from './auth-routing.module';
     AuthRoutingModule,
   ],
   declarations: [
-    LoginComponent, 
-    RegisterComponent, 
-    ForgotPasswordComponent, 
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
     ResetPasswordComponent
   ]
 })

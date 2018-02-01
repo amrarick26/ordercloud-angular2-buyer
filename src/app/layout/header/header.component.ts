@@ -1,5 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import { APP_CONFIG, AppConfig } from '../../config/app.config';
 import { Router } from '@angular/router';
 
@@ -11,8 +10,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
-    @Inject(APP_CONFIG) private appConfig: AppConfig
-  ) {}
+    @Inject(APP_CONFIG) protected appConfig: AppConfig
+  ) { }
 
   ngOnInit() {
   }
