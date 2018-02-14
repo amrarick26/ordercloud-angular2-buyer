@@ -1,8 +1,0 @@
-<div class="login-page"
-     [ngSwitch]="form">
-    <app-login-form *ngSwitchCase="'login'"
-                    (emitSetForm)="setForm($event)"></app-login-form>
-    <app-reset-password-form *ngSwitchCase="'reset-password'"
-                             (emitSetForm)="setForm($event)"></app-reset-password-form>
-    <app-forgot-password-form *ngSwitchCase="'forgot-password'"></app-forgot-password-form>
-</div>

@@ -3,3 +3,86 @@
   home works!
   <app-product-browse></app-product-browse>
 </p>
+
+<div class="jumbotron bg-rainbow text-white text-center">
+  <div class="container">
+    <h1 class="display-4">Welcome to {{appConfig.appname}}</h1>
+    <p class="lead text-dark">
+      A starter application for the 
+      <a class="text-white" href="http://www.ordercloud.io" target="_blank">OrderCloud.io</a> 
+      shopping experience built on 
+      <a class="text-white" href="http://www.angular.io" target="_blank"> Angular v5.0.x</a>
+    </p>
+  </div>
+</div>
+<div class="container">
+  <section class="card-deck">
+    <article class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Layout Module</h4>
+        <p class="card-text">The layout module contains components for the global header, footer, and main <code>router-outlet</code> directive.</p>
+        <a class="card-link" routerLink="/modules/layout">Read more</a>
+        <a class="card-link" routerLink="/modules/shared">View examples</a>
+      </div>
+    </article>
+    <article class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Auth Module</h4>
+        <p class="card-text">Includes components for registration, login, and forgot password flows.</p>
+        <a class="card-link" routerLink="/modules/auth">Read more</a>
+        <a class="card-link" routerLink="/modules/shared">View examples</a>
+      </div>
+    </article>
+    <div class="w-100"></div>
+    <article class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Profile Module</h4>
+        <p class="card-text">Includes components for profile settings, wishlist, address book, and order history.</p>
+        <a class="card-link" routerLink="/modules/profile">Read more</a>
+        <a class="card-link" routerLink="/modules/shared">View examples</a>
+      </div>
+    </article>
+    <article class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Catalog Module</h4>
+        <p class="card-text">Includes components for product browse, category tree, and category view.</p>
+        <a class="card-link" routerLink="/modules/catalog">Read more</a>
+        <a class="card-link" routerLink="/modules/shared">View examples</a>
+      </div>
+    </article>
+    <div class="w-100"></div>
+    <article class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Payment Module</h4>
+        <p class="card-text">Includes components for credit cards, spending accounts, purchase orders, gift cards, and promotions.</p>
+        <a class="card-link" routerLink="/modules/payment">Read more</a>
+        <a class="card-link" routerLink="/modules/shared">View examples</a>
+      </div>
+    </article>
+    <article class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Checkout Module</h4>
+        <p class="card-text">Includes components for the shopping cart, checkout process, and order confirmation.</p>
+        <a class="card-link" routerLink="/modules/checkout">Read more</a>
+        <a class="card-link" routerLink="/modules/shared">View examples</a>
+      </div>
+    </article>
+    <div class="w-100"></div>
+    <article class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Shared Module</h4>
+        <p class="card-text">Includes modules, services, pipes, and components that are used across multiple components.</p>
+        <a class="card-link" routerLink="/modules/shared">Read more</a>
+        <a class="card-link" routerLink="/modules/shared">View examples</a>
+      </div>
+    </article>
+    <article class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Module Configuration</h4>
+        <p class="card-text">Each module can be configured to modify or swap out commonly used UI patterns or restrictions.</p>
+        <a class="card-link" routerLink="/modules/config">Read more</a>
+        <a class="card-link" routerLink="/modules/shared">View examples</a>
+      </div>
+    </article>
+  </section>
+</div>
