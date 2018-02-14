@@ -1,50 +1,36 @@
 // core services
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-// third party services
-import { CookieService } from 'angular2-cookie/services/cookies.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// 3rd party
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
-// app services
-import { OrderCloudSDK } from './common/services/ordercloud-sdk/ordercloud-sdk.service';
+// shared module
+import { SharedModule } from './shared/shared.module';
+
+// app modules
+import { AuthModule } from './auth/auth.module';
+import { LayoutModule } from './layout/layout.module';
 
 // app components
 import { AppComponent } from './app.component';
-import { LoginFormComponent } from './login/login-form/login-form.component';
-import { ResetPasswordFormComponent } from './login/reset-password-form/reset-password-form.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { LoginComponent } from './login/login-component';
-import { OcAutoValidate } from './common/services/oc-auto-validate/oc-auto-validate.service';
+import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-
-// app config
-import { APP_CONFIG, OcAppConfig } from './app.config';
-import { ForgotPasswordFormComponent } from './login/forgot-password-form/forgot-password-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    LoginFormComponent,
-    ResetPasswordFormComponent,
-    HomeComponent,
-    ForgotPasswordFormComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    NgbModule.forRoot(),
-    ReactiveFormsModule,
-    AppRoutingModule
+    NgProgressModule.forRoot(),
+    NgProgressHttpModule,
+    SharedModule,
+    AppRoutingModule,
+    LayoutModule,
+    AuthModule
   ],
   providers: [
-    CookieService,
-    OrderCloudSDK,
-    OcAutoValidate,
-    { provide: APP_CONFIG, useValue: OcAppConfig }
   ],
   bootstrap: [AppComponent]
 })
