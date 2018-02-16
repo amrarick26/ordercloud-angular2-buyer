@@ -1,0 +1,25 @@
+<div class="container mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Shop</li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-sm-auto">
+      <category-tree></category-tree>
+    </div>
+    <div class="col">
+      <div class="card-columns card-columns-shop">
+        <a class="card text-center" *ngFor="let product of products;" [routerLink]="['/product', product.ID]">
+          <img src="{{product?.xp?.image?.URL}}" alt="{{product.Name}}" class="card-img-top p-3 w-75">
+          <div class="card-body">
+            <h5 class="card-title">{{product.Name}} <small *ngIf="product.QuantityMultiplier > 1">({{product.QuantityMultiplier}} pack)</small></h5>
+            <p class="card-text text-success">{{product.PriceSchedule.PriceBreaks[0].Price | currency}}</p>
+          </div>
+        </a>
+      </div>
+      <!-- <product-list></product-list> -->
+    </div>
+  </div>
+</div>

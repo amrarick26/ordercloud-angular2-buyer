@@ -11,7 +11,8 @@
   'vendor/bootstrap',
   'vendor/normalize',
   'vendor/font-awesome',
-  'vendor/ngx-toastr';
+  'vendor/ngx-toastr',
+  'vendor/angular-tree';
 
 // 3. Base stuff
 @import
@@ -28,7 +29,9 @@
 // 5. Components
 @import
   'components/button',
-  'components/_forms';
+  'components/category-tree',
+  'components/forms',
+  'components/shop';
 
 // 6. Page-specific styles
 @import

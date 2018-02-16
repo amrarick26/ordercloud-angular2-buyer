@@ -1,0 +1,51 @@
+<div class="container pt-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/shop">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{product.Name}}</li>
+      </ol>
+    </nav>
+    <div class="row">
+
+        <!-- PRODUCT IMAGE TODO: product-gallery>product-image>product-zoom  -->
+        <div class="col-sm-6 col-md-4">
+            <div class="bg-white rounded text-center p-3 mb-3" style="overflow:hidden;">
+                <img class="img-fluid"
+                      src="{{product.xp?.image?.URL}}"
+                      alt="{{product.Name}}">
+            </div>
+        </div>
+
+
+        <div class="col-sm">
+          <span class="badge badge-secondary float-left">{{product.ID}}</span>
+          <h1>{{product.Name}} <small *ngIf="product.QuantityMultiplier > 1">({{product.QuantityMultiplier}} pack)</small></h1>
+          <p [innerHtml]="product.Description"></p>
+          <form style="max-width:500px;"
+                [formGroup]="form"
+                (ngSubmit)="addToCart()"
+                novalidate>
+              <div class="form-group"
+                  *ngFor="let spec of productSpecs">
+                  <product-spec [spec]="spec"
+                                [parent]="form.get('specs')"></product-spec>
+              </div>
+              <div class="form-row">
+                  <div class="col-md">
+                      <div class="form-group">
+                          <product-quantity [product]="product"
+                                            [parent]="form"
+                                            [total]="lineTotal"></product-quantity>
+                      </div>
+                  </div>
+                  <div class="col-md-auto">
+                      <button type="submit"
+                              [disabled]="form.invalid"
+                              class="btn btn-outline-primary btn-block btn-lg"><i class="fa fa-plus"></i> Add to Cart</button>
+                  </div>
+              </div>
+          </form>
+        </div>
+    </div>
+</div>

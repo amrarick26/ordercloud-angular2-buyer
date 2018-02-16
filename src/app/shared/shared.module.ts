@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 // 3rd party utils
 import { CookieModule } from 'ngx-cookie';
 import { ToastrModule } from 'ngx-toastr';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 // 3rd party UI
 import { TextMaskModule } from 'angular2-text-mask';
@@ -22,6 +23,15 @@ import { OcSDKConfig } from '../config/ordercloud-sdk.config';
 import { OcAutoValidate } from './services/oc-auto-validate/oc-auto-validate.service';
 import { APP_CONFIG, OcAppConfig } from '../config/app.config';
 import { AppErrorHandler } from '../config/error-handling.config';
+import { SweetAlertOptions } from 'sweetalert2';
+
+export const DefaultAlertOptions : SweetAlertOptions = {
+  buttonsStyling: false,
+  customClass: 'modal-content',
+  confirmButtonClass: 'btn btn-primary',
+  cancelButtonClass: 'btn btn-secondary',
+  confirmButtonText: 'Okay',
+}
 
 @NgModule({
   imports: [
@@ -35,6 +45,7 @@ import { AppErrorHandler } from '../config/error-handling.config';
     // 3rd party utils
     CookieModule.forRoot(),
     ToastrModule.forRoot(),
+    SweetAlert2Module.forRoot(DefaultAlertOptions),
 
     // 3rd party UI
     TextMaskModule,
@@ -56,6 +67,7 @@ import { AppErrorHandler } from '../config/error-handling.config';
     // 3rd party utils
     CookieModule,
     ToastrModule,
+    SweetAlert2Module,
 
     // 3rd party UI
     TextMaskModule,
@@ -70,6 +82,6 @@ import { AppErrorHandler } from '../config/error-handling.config';
     OcAutoValidate,
     { provide: APP_CONFIG, useValue: OcAppConfig },
     { provide: ErrorHandler, useClass: AppErrorHandler }
-  ]
+  ],
 })
 export class SharedModule { }

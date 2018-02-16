@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 // app modules
 import { AuthModule } from './auth/auth.module';
 import { LayoutModule } from './layout/layout.module';
+import { CatalogModule } from './catalog/catalog.module';
 
 // app components
 import { AppComponent } from './app.component';
@@ -20,7 +21,7 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     NgProgressModule.forRoot(),
@@ -28,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     SharedModule,
     AppRoutingModule,
     LayoutModule,
-    AuthModule
+    AuthModule,
+    CatalogModule
   ],
   providers: [
   ],
