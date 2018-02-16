@@ -1,11 +1,11 @@
-#Discovery Notes
+# Discovery Notes
 
-##Feature module?
+## Feature module?
 Seems like there is enough functionality for everything related to an individual product that it could be it's own feature module. Unless we are okay with multiple smart components in each feature module.
 
 I don't think the product module will need it's own routing file, since it will often be included in the routing modules of _other_ features, like `shop` or `search`.
 
-##Potential Product Module breakdown
+## Potential Product Module breakdown
 - `/product`
   - `/container`
     - `product.component.ts`
