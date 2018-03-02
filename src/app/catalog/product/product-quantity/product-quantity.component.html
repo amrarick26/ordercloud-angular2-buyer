@@ -1,0 +1,31 @@
+<ng-container [formGroup]="form">
+  <div class="input-group input-group-lg">
+    <input 
+      *ngIf="!restricted"
+      class="form-control text-center"
+      type="number"           
+      formControlName="quantity"
+      (input)="handleQuantityChange()"
+      required
+      [min]="min"
+      [max]="max"
+      step="1">
+    <select 
+      *ngIf="restricted" 
+      class="form-control form-control-lg text-center"
+      (change)="handleQuantityChange()"
+      required
+      formControlName="quantity">
+      <option 
+        *ngFor="let option of priceBreaks" 
+        [value]="option.Quantity">
+        {{option.Quantity}}
+      </option>
+    </select>
+    <div class="input-group-append">
+      <span class="input-group-text text-success bg-white">
+        {{total | currency}}
+      </span>
+    </div>
+  </div>
+</ng-container>

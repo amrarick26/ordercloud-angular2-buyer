@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { AppConfig, APP_CONFIG } from '../config/app.config';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

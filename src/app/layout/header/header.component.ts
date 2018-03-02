@@ -8,12 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  appname: string;
   constructor(
     private router: Router,
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) { }
 
   ngOnInit() {
+    this.appname = this.appConfig.appname;
   }
 
   search() {

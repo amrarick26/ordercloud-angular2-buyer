@@ -1,0 +1,19 @@
+<ng-container [formGroup]="form">
+  <label [for]="spec.ID">{{spec.Name}}</label>
+  <input 
+    *ngIf="spec.AllowOpenText"
+    type="text"
+    class="form-control"
+    [id]="spec.ID"
+    [required]="spec.Required"
+    [formControlName]="spec.ID">
+  <select 
+    *ngIf="!spec.AllowOpenText && spec.Options"
+    class="form-control"
+    [id]="spec.ID"
+    [required]="spec.Required"
+    [formControlName]="spec.ID">
+    <option [value]="null" *ngIf="!spec.Required">None</option>
+    <option *ngFor="let option of spec.Options" [value]="option.ID">{{option.Value}}</option>
+  </select>
+</ng-container>

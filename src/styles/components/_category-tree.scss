@@ -1,0 +1,50 @@
+.toggle-children-wrapper {
+    padding-top:0;
+}
+.toggle-children {
+    transition: transform 100ms;
+    transform-origin: 40% 70%;
+    background-image:none !important;
+    color: $text-muted;
+    text-align:center;
+    line-height:90%;
+    vertical-align:middle;
+    @extend .#{$fa-css-prefix};
+
+    &:before {
+        content: $fa-var-angle-down;
+    }
+}
+
+.toggle-children-wrapper-collapsed {
+    .toggle-children {
+        @include fa-icon-rotate(-90deg, -1);
+    }
+}
+
+.toggle-children-wrapper-expanded {
+    .toggle-children {
+        transform:none;
+    }
+}
+
+.node-content-wrapper {
+    color:$text-muted;
+    box-shadow:none !important;
+    border:none !important;
+    background-color:transparent !important;
+    &:hover,
+    &:focus,
+    &.node-content-wrapper-hover,
+    &.node-content-wrapper-focused {
+        color:$body-color;
+    }
+    &.node-content-wrapper-active {
+        &,
+        &:hover,
+        &:focus {
+            font-weight:bold;
+            color:$link-color;
+        }
+    }
+}
