@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 import 'rxjs/add/operator/catch';
 
 import { SwalComponent } from '@toverux/ngx-sweetalert2';
-import { SweetAlertOptions } from 'sweetalert2';
+// import { SweetAlertOptions } from 'sweetalert2';
 
 import { BuyerProduct, LineItemService, MeService, BuyerSpec, LineItem } from '@ordercloud/angular-sdk';
 import { CurrentOrder } from './order.resolve';

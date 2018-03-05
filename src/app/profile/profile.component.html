@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Change Password</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Order History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Wishlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Address Book</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          hello
+        </div>
+        <div class="input-group input-group-lg">
+          <input
+            class="form-control text-center"
+            type="text"           
+            formControlName="quantity"
+            (input)="handleQuantityChange()"
+            required
+            [min]="min"
+            [max]="max"
+            step="1">
+          <div class="input-group-append">
+            <span class="input-group-text text-success bg-white">
+              {{total | currency}}
+            </span>
+          </div>
+        </div>
+          {{currentUser?.Username}}
+      </div>
+    </div>
+  </div>
+</div>
