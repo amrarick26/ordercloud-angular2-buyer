@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { LayoutModule } from './layout/layout.module';
 import { CatalogModule } from './catalog/catalog.module';
+import { CheckoutModule } from './checkout/checkout.module';
 
 // app components
 import { AppComponent } from './app.component';
@@ -23,7 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent,
+    ProfileComponent    
   ],
   imports: [
     NgProgressModule.forRoot(),
@@ -32,7 +33,8 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     LayoutModule,
     AuthModule,
-    CatalogModule
+    CatalogModule,
+    CheckoutModule
   ],
   providers: [
   ],
